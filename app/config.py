@@ -7,6 +7,7 @@ class Config:
     CACHE_REDIS_URL = os.environ.get('REDIS_URL')
     DEBUG = os.environ.get('DEBUG', True)
     S3_BUCKET = os.environ.get('S3_BUCKET')
+    S3_INDEX_DOCUMENT = os.environ.get("S3_INDEX_DOCUMENT")
     VERBOSE_SQLALCHEMY = False
     SSLIFY_ENABLE = False
     SENTRY_ENABLE = False

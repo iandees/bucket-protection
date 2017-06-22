@@ -21,6 +21,8 @@ def passthrough(path):
     else:
         s3 = boto3.resource('s3')
         bucket = current_app.config.get('S3_BUCKET')
+        if path.endswith("/") and current_app.config.get('S3_INDEX_DOCUMENT'):
+            path += current_app.config.get('S3_INDEX_DOCUMENT')
         obj = s3.Object(bucket, path)
 
         try:
