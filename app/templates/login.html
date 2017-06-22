@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+
+    {% if 'facebook' in config.get('OAUTH_CREDENTIALS') %}
+    <p><a href="{{ url_for('auth.oauth_authorize', provider='facebook') }}">Login with Facebook</a></p>
+    {% endif %}
+
+    {% if 'google' in config.get('OAUTH_CREDENTIALS') %}
+    <p><a href="{{ url_for('auth.oauth_authorize', provider='google') }}">Login with Google</a></p>
+    {% endif %}
+
+    {% if 'slack' in config.get('OAUTH_CREDENTIALS') %}
+    <p><a href="{{ url_for('auth.oauth_authorize', provider='slack') }}">Login with Slack</a></p>
+    {% endif %}
+</body>
+</html>
