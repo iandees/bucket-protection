@@ -6,6 +6,8 @@ class Config:
     CACHE_TYPE = os.environ.get('CACHE_TYPE', 'simple')
     CACHE_REDIS_URL = os.environ.get('REDIS_URL')
     DEBUG = os.environ.get('DEBUG', True)
+
+    DEFAULT_PAGE = 'index.html'
     S3_BUCKET = os.environ.get('S3_BUCKET')
     VERBOSE_SQLALCHEMY = False
     SSLIFY_ENABLE = False

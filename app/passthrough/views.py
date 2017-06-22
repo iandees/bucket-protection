@@ -19,6 +19,10 @@ def passthrough(path):
     if not current_user.is_authenticated:
         return redirect(url_for('auth.login', next=request.path))
     else:
+        default_page = current_app.config.get('DEFAULT_PAGE')
+        if default_page and path.endswith('/'):
+            path += default_page
+
         s3 = boto3.resource('s3')
         bucket = current_app.config.get('S3_BUCKET')
         obj = s3.Object(bucket, path)
