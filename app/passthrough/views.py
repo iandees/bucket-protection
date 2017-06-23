@@ -20,7 +20,7 @@ def passthrough(path):
         return redirect(url_for('auth.login', next=request.path))
     else:
         default_page = current_app.config.get('S3_INDEX_DOCUMENT')
-        if default_page and path.endswith('/'):
+        if default_page and (path == '' or path.endswith('/')):
             path += default_page
 
         s3 = boto3.resource('s3')
