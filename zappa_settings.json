@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "project_name": "your_project",
+        "s3_bucket": "your_bucket",
+        "app_function": "wsgi.app",
+        "domain": "your.domain",
+        "environment_variables": {
+            "SLACK_APP_ID": "your_app_id",
+            "SLACK_APP_SECRET": "your_app_secret",
+            "SLACK_TEAM_ID": "your_team_id",
+            "S3_BUCKET": "your_bucket",
+        }
+    }
+}
