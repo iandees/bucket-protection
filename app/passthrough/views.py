@@ -14,8 +14,9 @@ from flask_login import current_user
 from . import passthrough_bp
 
 
+@passthrough_bp.route('/')
 @passthrough_bp.route('/<path:path>')
-def passthrough(path):
+def passthrough(path=""):
     if not current_user.is_authenticated:
         return redirect(url_for('auth.login', next=request.path))
     else:
