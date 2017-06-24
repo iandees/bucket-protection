@@ -18,7 +18,7 @@ from . import passthrough_bp
 @passthrough_bp.route('/<path:path>')
 def passthrough(path=""):
     if not current_user.is_authenticated:
-        return redirect(url_for('auth.login', next=request.path))
+        return redirect(url_for('auth.login', next=request.path or ""))
     else:
         default_page = current_app.config.get('S3_INDEX_DOCUMENT')
         if default_page and (path == '' or path.endswith('/')):
