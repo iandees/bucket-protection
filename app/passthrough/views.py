@@ -36,7 +36,8 @@ def passthrough(path):
 
             response = Response(generate(obj_resp))
             response.headers['Content-Type'] = obj_resp['ContentType']
-            response.headers['Content-Encoding'] = obj_resp['ContentEncoding']
+            if obj_resp.has_key('ContentEncoding'):
+                response.headers['Content-Encoding'] = obj_resp['ContentEncoding']
             return response
         except botocore.exceptions.ClientError as e:
             if e.response['Error']['Code'] == "404":
