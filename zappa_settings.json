@@ -2,7 +2,7 @@
     "dev": {
         "project_name": "your_project",
         "s3_bucket": "your_bucket",
-        "app_function": "wsgi.app",
+        "app_function": "boot.app",
         "domain": "your.domain",
         "environment_variables": {
             "SLACK_APP_ID": "your_app_id",
