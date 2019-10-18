@@ -14,9 +14,8 @@ A simple app to add OAuth-based authentication in front of an S3 bucket-based st
 
    ```
    cd bucket-protection
-   virtualenv --python=python3 venv
-   venv/bin/activate
-   pip install -r requirements.txt
+   pipenv install
+   pipenv shell
    ```
 
 1. [Set up at least one OAuth provider](#oauth-config)
